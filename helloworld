@@ -1,0 +1,32 @@
+public class HelloWorldActivity extends Activity {
+ 
+    TextView nazwa;
+    EditText imie;
+    RadioGroup plec;
+    RatingBar ocena;
+    Button przycisk;
+    Context context;
+ 
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+        context = getApplicationContext();
+ 
+        nazwa = (TextView) findViewById(R.id.nazwa);
+        imie = (EditText) findViewById(R.id.imie);
+        plec = (RadioGroup) findViewById(R.id.plec);
+        ocena = (RatingBar) findViewById(R.id.ocena);
+        przycisk = (Button) findViewById(R.id.przycisk);
+ 
+        nazwa.setText("editor.javastart.pl daje radę!");
+ 
+        przycisk.setOnClickListener(new OnClickListener() {
+ 
+            public void onClick(View v) {
+                Toast.makeText(context, "Przycisk działa!", Toast.LENGTH_LONG).show();
+            }
+        });
+ 
+    }
+}
